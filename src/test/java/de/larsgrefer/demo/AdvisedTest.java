@@ -3,8 +3,6 @@ package de.larsgrefer.demo;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public class AdvisedTest {
 
     private Advised advised;
@@ -21,16 +19,16 @@ public class AdvisedTest {
 
     @Test
     public void dummy1() {
-        advised.dummy1();
+        advised.dummy1(0);
     }
 
     @Test
     public void dummy2() {
-        advised.dummy2();
+        advised.dummy2("", 0);
     }
 
     @Test
     public void dummy3() {
-        advised.dummy3();
+        advised.dummy3(0, false, 0);
     }
 }
