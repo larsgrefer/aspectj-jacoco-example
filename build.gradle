@@ -1,6 +1,7 @@
 plugins {
-    id "io.freefair.aspectj.post-compile-weaving" version "2.5.4"
+    id "java"
     id "jacoco"
+    id "io.freefair.aspectj.post-compile-weaving" version "3.1.4"
 }
 
 repositories {
@@ -8,12 +9,8 @@ repositories {
     mavenCentral()
 }
 
-jacoco.toolVersion = "0.8.2-SNAPSHOT"
+jacoco.toolVersion = "0.8.3"
 
 dependencies {
     testCompile "junit:junit:4.12"
-}
-
-tasks.withType(io.freefair.gradle.plugins.Ajc) {
-    encoding = "UTF-8"
 }

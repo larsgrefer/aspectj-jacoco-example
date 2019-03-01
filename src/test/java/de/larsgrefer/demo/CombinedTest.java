@@ -3,8 +3,6 @@ package de.larsgrefer.demo;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public class CombinedTest {
 
     private Combined combined;
@@ -16,6 +14,8 @@ public class CombinedTest {
 
     @Test
     public void dummy() {
-        combined.dummy();
+        combined.dummy1();
+        combined.dummy2();
+        combined.dummy3();
     }
 }

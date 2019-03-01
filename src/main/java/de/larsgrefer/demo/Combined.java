@@ -12,7 +12,7 @@ import org.aspectj.lang.annotation.Aspect;
 @Aspect
 public class Combined {
 
-    @Around("execution(* Combined.dummy(..))")
+    @Around("execution(* Combined.dummy*(..))")
     public Object logAround(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
         System.out.println("-->");
         Object value = proceedingJoinPoint.proceed();
@@ -20,7 +20,37 @@ public class Combined {
         return value;
     }
 
-    public void dummy() {
-        System.out.println("dummy");
+    public void dummy1() {
+
+        int i;
+        if (System.currentTimeMillis() % 2 >= 2) {
+            i = 5;
+        } else {
+            i = 42;
+        }
+        System.out.println(i);
+    }
+
+    public void dummy2() {
+
+        int i;
+        if (System.currentTimeMillis() % 2 >= 3) {
+            i = 5;
+        } else {
+            i = 42;
+        }
+        System.out.println(i);
+    }
+
+    public int dummy3() {
+
+        int i;
+        if (System.currentTimeMillis() % 2 >= 4) {
+            i = 5;
+        } else {
+            i = 42;
+        }
+        System.out.println(i);
+        return i;
     }
 }
